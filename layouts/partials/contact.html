@@ -5,7 +5,7 @@
 		{{ with .Site.Params.contact.content }}<p>{{ . | markdownify }}</p>{{ end }}
 	{{ end }}
 	<div class="row" id="contact-form">
-		{{ if (isset .Site.Params.contact "email") | and (gt (len .Site.Params.contact.email) 0) }}
+		{{ if (isset .Site.Params.contact "showform") | and (isset .Site.Params.contact "email") | and (gt (len .Site.Params.contact.email) 0) }}
 		<div class="8u 12u$(small)">
 			<form action="//formspree.io/{{ .Site.Params.contact.email }}" method="POST">
 				<div class="row uniform 50%">
@@ -22,7 +22,9 @@
 			</form>
 		</div>
 		{{ else }}
-		<div class="8u 12u$(small)">&nbsp;</div>
+		<div class="8u 12u$(small)">
+            <div class="mailimg">&nbsp;</div>
+        </div>
 		{{ end }}
 		<div class="4u$ 12u$(small)">
 			<ul class="labeled-icons">
@@ -49,7 +51,7 @@
 				{{ if isset .Site.Params.contact "email" }}
 				<li>
 					<h3 class="icon fa-envelope-o"><span class="label"></span></h3>
-					<a href="#">{{ .Site.Params.contact.email }}</a>
+					<a id="strmla1" href="#">{{ .Site.Params.contact.email }}</a>
 				</li>
 				{{ end }}
 			</ul>

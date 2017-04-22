@@ -3155,3 +3155,9 @@
 	 font-size: 20px;
 	 line-height: 36px;
  }
+
+.mailimg {
+    background: url(/images/mailbox.jpg) no-repeat;
+    min-height: 250px;
+    background-size: cover;
+}
