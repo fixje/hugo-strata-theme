@@ -7,6 +7,10 @@
 		{{ partial "portfolio" . }}
 	{{ end }}
 
+	{{ if not .Site.Params.publications.hide }}
+		{{ partial "publications" . }}
+	{{ end }}
+
 	{{ if not .Site.Params.recentposts.hide }}
 		{{ partial "recent-posts" . }}
 	{{ end }}

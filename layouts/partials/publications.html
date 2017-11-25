@@ -1,0 +1,26 @@
+{{ "<!-- portfolio -->" | safeHTML }}
+<section>
+	{{ with .Site.Params.publications.title }}<h2>{{ . | markdownify }}</h2>{{ end }}
+	{{ with .Site.Params.publications.description }}<p>{{ . | markdownify }}</p>{{ end }}
+	<div class="row">
+		<ul>
+			{{ range .Site.Params.publications.pub }}
+				<li>
+					<strong><a href="{{ .file }}" target="_blank">{{ .title }}</a></strong>
+					{{ if not (eq .subtitle "") }}
+						- {{ .subtitle | markdownify }}
+					{{ end }}
+					<br>
+					<small style="font-size: 12pt;">
+						{{ .authors }},
+						<i>{{ .conference }}</i>,
+						{{ if not (eq .location "") }}
+						{{ .location }},
+						{{ end }}
+						{{ .date }}
+					</small>
+				</li>
+			{{ end }}
+		</ul>
+	</div>
+</section>
