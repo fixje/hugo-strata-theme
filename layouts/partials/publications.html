@@ -3,7 +3,7 @@
 	{{ with .Site.Params.publications.title }}<h2>{{ . | markdownify }}</h2>{{ end }}
 	{{ with .Site.Params.publications.description }}<p>{{ . | markdownify }}</p>{{ end }}
 	<div class="row">
-		<ul>
+		<ul style="list-style: none;">
 			{{ range .Site.Params.publications.pub }}
 				<li>
 					<strong><a href="{{ .file }}" target="_blank">{{ .title }}</a></strong>
